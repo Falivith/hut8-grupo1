@@ -6,7 +6,7 @@ body{
     height: 100vh;   
 }
 
-html {
+html{
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -15,3 +15,23 @@ html {
     font-size: 1rem;
     background: transparent;
   }
+
+.main{
+    padding: 3rem;
+}
+
+.main-header{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+#arrow{
+    left: 3rem;
+    position: absolute;
+}
+#main-header-text{
+    position: inherit;
+}
