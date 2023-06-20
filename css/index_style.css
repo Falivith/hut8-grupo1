@@ -1,12 +1,22 @@
 body{
     font-family: 'Montserrat', sans-serif;
+    font-size: 1rem;
     margin: 0;
     padding: 0;
-}
-html{
-    margin: 0;
+    flex: 1;
+    min-height: 100vh;
 }
 
+html {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+    background: transparent;
+    font-family: var(--fonte1);
+  }
 .main_section ul{
     list-style: none;
     display: flex;
