@@ -12,21 +12,31 @@
     />
     <link rel="stylesheet" href="../css/header_style.css" />
     <link rel="stylesheet" href="../css/index_style.css" />
-    <link rel="stylesheet" href="../css/informacoes_style.css" />
     <link rel="stylesheet" href="../css/footer_style.css" />
     <link rel="stylesheet" href="../css/login_style.css" />
+    <script src="../scripts/header.js"></script>
+    <script src="../scripts/login.js"></script>
 
-    <title>Produtos</title>
+    <title>Login</title>
   </head>
   <body>
-    <header>
-      <img src="../assets/logo.png" alt="logo hut8" />
+    <header id = "dynamicHeader">
+      <a href="index.html">
+        <img src="../assets/logo.png" alt="logo hut8" />
+      </a>
       <ul>
         <li><a href="http://www.hut8.com.br" target="_blank">Home</a></li>
         <li><a href="">Projetos</a></li>
         <li><a href="" id="ourProducts">Nossos produtos</a></li>
         <li><a href="">Nossa equipe</a></li>
-        <li><a href="">Entrar</a></li>
+        <li id = "entrarHeader"><a href="login.html">Entrar</a></li>
+        <li id = "sairHeader"><a href="index.html">Sair</a></li>
+        <li>
+          <div id = "loggedButtons">
+            <button><img src="../assets/Shopping Cart.svg" alt=""></button>
+            <button><img src="../assets/User.svg" alt=""></button>
+          </div>
+        </li>
       </ul>
     </header>
 
@@ -36,7 +46,7 @@
             <form action="">
                 <input type="text" placeholder="Insira seu e-mail">
                 <input type="password" placeholder="Insira sua senha">
-                <button>Entrar</button>
+                <button id = "loginButton">Entrar</button>
             </form>
             <a href="">Esqueceu sua senha?</a>            
         </div>

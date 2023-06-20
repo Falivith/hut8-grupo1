@@ -7,9 +7,38 @@ header{
     font-size: 1rem;
 }
 
+header a{
+    margin: 0;
+}
+
 header ul li a{
     color: #fff;
     text-decoration: none;
+    margin-top:0;
+}
+
+#sairHeader{
+    display: none;
+    color: white;
+    cursor: pointer;
+}
+
+#loggedButtons{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: fit-content;
+}
+
+#loggedButtons button{
+    background-color: transparent;
+    height: 40px;
+    all: unset;
+    cursor: pointer;
+}
+
+#loggedButtons button img{
+    height: 32px;
 }
 
 header ul{
