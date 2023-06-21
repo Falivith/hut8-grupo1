@@ -3,7 +3,10 @@ body{
     font-size: 1rem;
     margin: 0; 
     justify-content: space-between;
-    height: 100vh;   
+    display:flex; 
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 100vh;
 }
 
 html {
@@ -14,13 +17,20 @@ html {
     outline: 0;
     font-size: 1rem;
     background: transparent;
+    
   }
+
+.container{
+    display:flex; 
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: 100vh;
+}
 
 .main_section{
     display: flex;
     align-items: center;
     flex-direction: column;
-    height: 100vh; 
 }
 
 .main_section ul{

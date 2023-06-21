@@ -3,6 +3,8 @@ footer{
     flex-direction: column;
     width: 100%;
     align-self: flex-end;
+    bottom: 0;
+    margin-top: 6rem;
 }
 .informacoes_footer{
     display: flex;
