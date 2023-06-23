@@ -41,10 +41,11 @@ p{
     flex-direction: column;
     padding: 6rem 0 6rem 8.3rem;
     align-items: start;
-    background: #FFFFFF url("../assets/homebanner.jpg") no-repeat;
     color: white;
-
-
+    background: #FFFFFF url("../assets/homebanner.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    flex-wrap: nowrap;
 }
 .introducao h1{
     font-size: 2rem;
@@ -52,7 +53,7 @@ p{
 }
 .introducao p{
     width: 20%;
-    line-height: 1.3rem;
+    line-height: 1.5rem;
 }
 
 .introducao button{
@@ -63,8 +64,9 @@ p{
     height: 50px;
     background-color: #96d600;
     border: none;
-    border-radius: 10px;
+    border-radius: 0.5rem;
     color: white;
+    cursor: pointer;
 }
 .sobre{
     display: flex;
@@ -98,3 +100,49 @@ p{
     margin: auto;
 }
 
+.portfolio {
+    display: flex;
+    flex-direction: column;
+    background: #FFFFFF url("../assets/banner2.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center; 
+}
+.conteudo{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    width: 20%;
+    padding-right: 35rem;
+    padding-top: 4.5rem;
+    margin-left: auto;
+    color: black;
+    margin-bottom: 4rem;
+}
+
+.conteudo p{
+    margin-bottom: 1.5rem;
+    width: 75%;
+    font-weight: bold;
+    line-height: 1.5rem;
+}
+  
+
+#btn_portfolio{
+    font-weight: bold;
+    font-size: 1rem;
+    width: 18rem;
+    height: 50px;
+    background-color: #96d600;
+    border: none;
+    border-radius: 0.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+
+.solucoes{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
