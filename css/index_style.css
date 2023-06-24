@@ -3,7 +3,7 @@ body{
     font-size: 1rem;
     margin: 0; 
     justify-content: space-between;
-    height: 100vh;   
+    height: 100vh;
 }
 
 html {
@@ -61,7 +61,7 @@ html {
 }
 
 #camisetas{
-    background-image: url(../assets/camisetaRoxa.png);
+    background-image: url(../assets/camiseta-roxa.png);
 }
 #broches{
     background-image: url(../assets/broche.png);

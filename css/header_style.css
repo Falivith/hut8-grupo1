@@ -1,14 +1,23 @@
+*{
+    margin: 0;
+}
+
 header{
     background-color: #64008a;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 0 2.5rem 0 2.5rem;
     font-size: 1rem;
+    height: 5.125rem;
 }
 
-header a{
-    margin: 0;
+#logo{
+    margin-left: 4%;
+}
+
+header ul{
+    padding: 0px 20px 0px 20px;
+    margin-right: 4%;
+    height: 100%;
 }
 
 header ul li a{
@@ -23,21 +32,22 @@ header ul li a{
     cursor: pointer;
 }
 
-#loggedButtons{
+#loggedButtons div{
     display: flex;
     align-items: center;
     gap: 40px;
     height: fit-content;
+    width:auto;
 }
 
-#loggedButtons button{
+#loggedButtons div button{
     background-color: transparent;
     height: 40px;
     all: unset;
     cursor: pointer;
 }
 
-#loggedButtons button img{
+#loggedButtons div button img{
     height: 32px;
 }
 
@@ -46,24 +56,54 @@ header ul{
     max-width: 70%;
     display: flex;
     align-items: center;
-    gap: 5rem;
+    gap: 3.5rem;
 }
 
 #ourProducts{
     font-weight: bold;
 }
 
-@media (max-width: 950px){
+/*@media (max-width: 950px){
     header ul{
         max-width: 100%;
         gap: 2rem;
     }
+    #logo{
+        display: none;
+    }
+}*/
+
+@media (max-width: 900px){
+    header{
+        text-align: center;
+        justify-content: space-around;
+    }
+    header ul{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        gap: 6%;
+        margin: 0 10px 0 10px;
+        padding: 0;
+    }
+    #logo{
+        display: none;
+    }
+    #loggedButtons div{
+        gap: 20px;
+    }
+    #ourTeam{
+        display: none;
+    }
 }
 
-@media (max-width: 700px){
-    header ul{
-        max-width: 100%;
-        gap: 1rem;
+@media (max-width: 600px){
+    header{
+        text-align: center;
+        justify-content: space-around;
+    }
+    #ourTeam{
+        display: none;
     }
 }
 
