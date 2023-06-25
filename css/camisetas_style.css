@@ -137,6 +137,12 @@ html{
     font-weight: 500;
 }
 
+@media screen and (min-width: 1299px){
+    .card-info{
+        min-width: 20rem;
+    }
+}
+
 @media screen and (min-width: 899px) and (max-width: 1300px){
     .card-box{
         padding-left: 0;
