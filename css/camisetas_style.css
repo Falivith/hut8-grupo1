@@ -17,6 +17,8 @@ html{
   }
 
 .main{
+    display: flex;
+    flex-direction: column;
     padding: 3rem;
 }
 
@@ -37,22 +39,26 @@ html{
 }
 
 .card-box{
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     justify-content: space-evenly;
     flex-wrap: wrap;
+    gap: 3.75rem 1.5rem;
+    padding: 3rem;
 }
 
 .card{
     display: flex;
     justify-items: center;
     justify-content: center;
-
+    gap: 1.5rem;
 }
 
 .card-image-box{
     display: flex;
-    position:relative;
+    position: relative;
     justify-content: center;
+    width: auto;
 }
 
 .card-image{
@@ -66,7 +72,7 @@ html{
     background-color: #64008A;
     display: flex;
     flex-direction: row;
-    width: 100%;
+    width: 19.875rem;
     height: 2.125rem;
     justify-content: center;
     z-index: 1;
@@ -83,9 +89,48 @@ html{
     font-size: 1.5rem;
 }
 
-  #first-item{
+.card-info{
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+#first-item{
     text-align: center;
     height: auto;
     background-color: transparent;
     border: 0;
+}
+
+  @media screen and (min-width: 720px) and (max-width: 900px) {
+    .main{
+        gap: 3rem;
+    }
+    .card-box{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+
+  }
+  
+  @media screen and (min-width: 200px) and (max-width: 721px) {
+    .main{
+        gap: 3rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    .card-box{
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    .card{
+        display: flex;
+        flex-direction: column;
+    }
+
   }
