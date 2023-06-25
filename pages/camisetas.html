@@ -11,55 +11,61 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="../css/camisetas_style.css" />
+
     <link rel="stylesheet" href="../css/header_style.css" />
     <link rel="stylesheet" href="../css/footer_style.css" />
-    <title>Document</title>
+    <title>Camisetas</title>
   </head>
   <body>
-    <div class = "container">
-      <header>
-        <img src="../assets/logo.png" alt="logo hut8" />
+    <div class="container">
+      <header id="dynamicHeader">
+        <a id="logo" href="index.html">
+          <img src="../assets/logo.png" alt="logo hut8" />
+        </a>
         <ul>
-          <li><a href="http://www.hut8.com.br" target="_blank">Home</a></li>
+          <li><a href="./index.html">Home</a></li>
           <li><a href="">Projetos</a></li>
-          <li><a href="">Nossos produtos</a></li>
-          <li><a href="">Nossa equipe</a></li>
-          <li><a href="">1</a></li>
-          <li><a href="">2</a></li>
+          <li><a href="" id="ourProducts">Nossos produtos</a></li>
+          <li id="ourTeam"><a href="">Nossa equipe</a></li>
+          <li id="entrarHeader"><a href="login.html">Entrar</a></li>
+          <li id="sairHeader"><p>Sair</p></li>
+          <li id="loggedButtons">
+            <div>
+              <button id="cart-button">
+                <img src="../assets/Shopping Cart.svg" alt="" />
+              </button>
+              <button id="user-button">
+                <img src="../assets/User.svg" alt="" />
+              </button>
+            </div>
+          </li>
         </ul>
       </header>
 
       <section class="main">
         <div class="main-header">
-          <img src="/assets/vectors/left_arrow.png" alt="Flecha para esquerda" id="arrow">
+          <img
+            src="/assets/vectors/left_arrow.png"
+            alt="Flecha para esquerda"
+            id="arrow"
+          />
           <p id="main-header-text">Camisetas</p>
         </div>
-        
-        <div class="card-box"> <!--Caixa onde ficam todos os cards-->
 
-        <div class="card">
-          <div class="card-image-box">
-            <img class="card-image" src="../assets/camiseta-roxa.png" alt="Camiseta roxa">
-            <div class="quantity-buttons">
-              <button>-</button>
-              <form>
-                <input type="text" id="first-item" value="0" size="1">
-              </form>
-              <button>+</button>
-            </div>
-          </div>
-          <div class="card-info">
-            <p>Camiseta Roxa</p>
-          </div>
-        </div>
+        <div class="card-box">
+          <!--Caixa onde ficam todos os cards-->
 
           <div class="card">
             <div class="card-image-box">
-              <img class="card-image" src="../assets/camiseta-roxa.png" alt="Camiseta roxa">
+              <img
+                class="card-image"
+                src="../assets/camiseta-roxa.png"
+                alt="Camiseta roxa"
+              />
               <div class="quantity-buttons">
                 <button>-</button>
                 <form>
-                  <input type="text" id="first-item" value="0" size="1">
+                  <input type="text" id="first-item" value="0" size="1" />
                 </form>
                 <button>+</button>
               </div>
@@ -71,11 +77,15 @@
 
           <div class="card">
             <div class="card-image-box">
-              <img class="card-image" src="../assets/camiseta-roxa.png" alt="Camiseta roxa">
+              <img
+                class="card-image"
+                src="../assets/camiseta-roxa.png"
+                alt="Camiseta roxa"
+              />
               <div class="quantity-buttons">
                 <button>-</button>
                 <form>
-                  <input type="text" id="first-item" value="0" size="1">
+                  <input type="text" id="first-item" value="0" size="1" />
                 </form>
                 <button>+</button>
               </div>
@@ -87,11 +97,15 @@
 
           <div class="card">
             <div class="card-image-box">
-              <img class="card-image" src="../assets/camiseta-roxa.png" alt="Camiseta roxa">
+              <img
+                class="card-image"
+                src="../assets/camiseta-roxa.png"
+                alt="Camiseta roxa"
+              />
               <div class="quantity-buttons">
                 <button>-</button>
                 <form>
-                  <input type="text" id="first-item" value="0" size="1">
+                  <input type="text" id="first-item" value="0" size="1" />
                 </form>
                 <button>+</button>
               </div>
@@ -101,6 +115,25 @@
             </div>
           </div>
 
+          <div class="card">
+            <div class="card-image-box">
+              <img
+                class="card-image"
+                src="../assets/camiseta-roxa.png"
+                alt="Camiseta roxa"
+              />
+              <div class="quantity-buttons">
+                <button>-</button>
+                <form>
+                  <input type="text" id="first-item" value="0" size="1" />
+                </form>
+                <button>+</button>
+              </div>
+            </div>
+            <div class="card-info">
+              <p>Camiseta Roxa</p>
+            </div>
+          </div>
         </div>
       </section>
 
@@ -111,7 +144,7 @@
             <img src="../assets/logo.png" alt="logo hut8" />
           </div>
           <!-- Lista das páginas -->
-          <div>
+          <div class="navigation">
             <ul>
               <li><a href="http://www.hut8.com.br" target="_blank">Home</a></li>
               <li><a id="" class="" href="embreve.html">Projetos</a></li>
@@ -120,7 +153,7 @@
             </ul>
           </div>
           <!-- Endereço -->
-          <div>
+          <div class="address">
             <ul>
               <li><p>Rua Gomes Carneiro, nº 1</p></li>
               <li><p>Centro - CEP: 96010-610</p></li>
@@ -128,7 +161,7 @@
             </ul>
           </div>
           <!-- Redes sociais -->
-          <div>
+          <div class="redesDiv">
             <p>Encontre a gente nas redes!</p>
             <ul class="redes">
               <li>
@@ -154,7 +187,7 @@
             </ul>
           </div>
         </div>
-        
+
         <div class="texto_final">
           <p>Desenvolvido por: Rafael, Ramon e Ulian.</p>
           <p>Todos os direitos reservados. ©</p>
