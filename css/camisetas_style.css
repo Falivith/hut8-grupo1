@@ -3,7 +3,8 @@ body{
     font-size: 1rem;
     margin: 0; 
     justify-content: space-between;
-    height: 100vh;   
+    height: 100vh;  
+    min-height: 100vh; 
 }
 
 html{
@@ -37,6 +38,12 @@ html{
     
 }
 
+#main-header-text{
+    font-size: 2rem;
+    font-weight: 700;
+    color: #64008A;
+}
+
 #arrow{
     left: 3rem;
     position: absolute;
@@ -45,13 +52,16 @@ html{
     position: inherit;
 }
 
+
 .card-box{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
+    display: flex;
+    
     justify-content: space-evenly;
     flex-wrap: wrap;
     gap: 3.75rem 1.5rem;
     padding: 3rem;
+    justify-items: center;
+    justify-content: center;
 }
 
 .card{
@@ -59,13 +69,14 @@ html{
     justify-items: center;
     justify-content: center;
     gap: 1.5rem;
+    flex: 1;
+    
 }
 
 .card-image-box{
     display: flex;
     position: relative;
     justify-content: center;
-    width: auto;
 }
 
 .card-image{
@@ -73,6 +84,7 @@ html{
     height: 15.625rem;
     border: 0;
     position: relative;
+    border-radius: 16px;
 }
 
 .quantity-buttons{
@@ -88,18 +100,25 @@ html{
     border-radius: 0 0 16px 16px;
     align-items: center;
     gap: 1.25rem;
+    
 }
 
+.quantity-buttons input, button {
+    color: #FFFFFF;
+    font-size:1.5rem;
+}
 .quantity-buttons button{
     background-color: transparent;
     border: 0;
-    font-size: 1.5rem;
 }
 
 .card-info{
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    height:fit-content;
+    /* justify-content: space-between; */
+    flex: 1;
 }
 
 #first-item{
@@ -107,6 +126,15 @@ html{
     height: auto;
     background-color: transparent;
     border: 0;
+}
+
+.item-name{
+    font-size: 1.5rem; 
+    font-weight: 500;
+}
+
+.item-value{
+    font-weight: 500;
 }
 
   @media screen and (min-width: 720px) and (max-width: 900px) {
@@ -118,8 +146,6 @@ html{
         flex-direction: column;
         padding: 0;
     }
-
-
   }
   
   @media screen and (min-width: 200px) and (max-width: 721px) {
@@ -132,11 +158,24 @@ html{
         display: flex;
         flex-direction: column;
         padding: 0;
+        align-content: center;
+        align-items: baseline;
     }
 
     .card{
         display: flex;
         flex-direction: column;
+        border-radius: 16px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        gap: 0;
+    }
+
+    .card-info{
+        padding-left: 1.5rem;
+        max-width: 11rem;
+        padding: 1rem;
+        justify-content: space-evenly;
+        gap: 1rem;
     }
 
   }
