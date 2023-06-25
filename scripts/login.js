@@ -1,5 +1,7 @@
 document.addEventListener('DOMContentLoaded', function(){
     const loginButton = document.getElementById("loginButton");
+    
+    loginButton.addEventListener('click', login);
 
     function login (event){
         event.preventDefault();
@@ -7,5 +9,4 @@ document.addEventListener('DOMContentLoaded', function(){
         window.history.back();
     }
 
-    loginButton.addEventListener('click', login);
 });
