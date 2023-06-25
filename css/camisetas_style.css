@@ -137,18 +137,30 @@ html{
     font-weight: 500;
 }
 
-  @media screen and (min-width: 720px) and (max-width: 900px) {
-    .main{
-        gap: 3rem;
+@media screen and (min-width: 899px) and (max-width: 1300px){
+    .card-box{
+        padding-left: 0;
+        padding-right: 0;
     }
+
+    .card-info{
+        max-width: 20rem;
+    }
+}
+
+@media screen and (min-width: 720px) and (max-width: 900px) {
     .card-box{
         display: flex;
         flex-direction: column;
         padding: 0;
     }
-  }
-  
-  @media screen and (min-width: 200px) and (max-width: 721px) {
+
+    .card-info{
+        max-width: 20rem;
+    }
+}
+
+@media screen and (min-width: 200px) and (max-width: 721px) {
     .main{
         gap: 3rem;
         padding-left: 0;
@@ -177,5 +189,4 @@ html{
         justify-content: space-evenly;
         gap: 1rem;
     }
-
-  }
+}
