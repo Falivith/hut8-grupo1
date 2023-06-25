@@ -140,6 +140,7 @@ html{
 @media screen and (min-width: 1600px){
     .card-info{
         min-width: 20rem;
+        max-width: 25rem;
     }
 }
 
