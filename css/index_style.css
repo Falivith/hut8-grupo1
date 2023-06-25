@@ -74,11 +74,6 @@ a{
     font-size: 1.5em;
     text-decoration: none;
     transition: box-shadow .5s cubic-bezier(0.36, 0.71, 0.6, 0.98), transform 0.2s cubic-bezier(0.77, 0.35, 0, 0.18);
-    
-    /*transition: 0.3s ease-out;
-    transition: box-shadow 0.4s ease-out;
-    transition: box-shadow 0.5s ease-in;
-    */
 }
 
 .card:hover{
