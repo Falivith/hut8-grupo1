@@ -25,7 +25,6 @@ function loadScript(url, callback) {
 
 loadScript('items.js', function() {
   document.addEventListener('DOMContentLoaded', function(){
-
   });
 });
 
@@ -42,6 +41,4 @@ document.addEventListener('DOMContentLoaded', function(){
     closeBtn.addEventListener("click", function() {
       cartModal.style.display = "none";
     });
-
-
 });
