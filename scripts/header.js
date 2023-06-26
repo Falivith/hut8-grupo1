@@ -13,6 +13,9 @@ document.addEventListener('DOMContentLoaded', function(){
     const entrarHeader = document.querySelector('#entrarHeader');
     const sairHeader = document.querySelector('#sairHeader');
 
+    const list = document.getElementById('hrefList');
+    console.log(list);
+
     let isLogged = sessionStorage.getItem('token');
 
     const docName = document.title;
@@ -30,4 +33,21 @@ document.addEventListener('DOMContentLoaded', function(){
     }
 
     sairHeader.addEventListener('click', logout);
+
+    switch (docName) {
+        case "Produtos":
+            list.children[2].children[0].style.fontWeight = '700';
+            break;
+        case "Camisetas":
+            list.children[2].children[0].style.fontWeight = '700';
+            break;
+        case "Camisetas":
+            list.children[2].children[0].style.fontWeight = '700';
+            break;
+        case "Camisetas":
+            list.children[2].children[0].style.fontWeight = '700';
+            break;
+        default:
+            break;
+    }
 });

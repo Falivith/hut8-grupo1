@@ -60,20 +60,6 @@ header ul{
     gap: 3.5rem;
 }
 
-#ourProducts{
-    font-weight: bold;
-}
-
-/*@media (max-width: 950px){
-    header ul{
-        max-width: 100%;
-        gap: 2rem;
-    }
-    #logo{
-        display: none;
-    }
-}*/
-
 @media (max-width: 900px){
     header{
         text-align: center;

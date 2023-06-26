@@ -10,13 +10,13 @@
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="../css/header_style.css" />
-    <link rel="stylesheet" href="../css/index_style.css" />
-    <link rel="stylesheet" href="../css/footer_style.css" />
-    <link rel="stylesheet" href="../css/cart_style.css" />
-    <script src="../scripts/script.js"></script>
-    <script src="../scripts/header.js"></script>
-    <script src="../scripts/cart.js"></script>
+    <link rel="stylesheet" href="css/header_style.css" />
+    <link rel="stylesheet" href="css/camisetas_style.css" />
+    <link rel="stylesheet" href="css/index_style.css" />
+    <link rel="stylesheet" href="css/footer_style.css" />
+    <link rel="stylesheet" href="css/cart_style.css" />
+    <script src="scripts/header.js"></script>
+    <script src="scripts/cart.js"></script>
     <title>Produtos</title>
   </head>
   
@@ -24,19 +24,19 @@
     <div class="container">
       <header id = "dynamicHeader">
         <a id="logo" href="index.html">
-          <img src="../assets/logo.png" alt="logo hut8" />
+          <img src="assets/logo.png" alt="logo hut8" />
         </a>
-        <ul>
-          <li><a href="http://www.hut8.com.br" target="_blank">Home</a></li>
-          <li><a href="">Projetos</a></li>
-          <li><a href="" id="ourProducts">Nossos produtos</a></li>
-          <li id = "ourTeam"><a href="">Nossa equipe</a></li>
-          <li id = "entrarHeader"><a href="login.html">Entrar</a></li>
+        <ul id="hrefList">
+          <li><a href="http://www.hut8.com.br" >Home</a></li>
+          <li><a href="pages/embreve.html">Projetos</a></li>
+          <li><a href="index.html" id="ourProducts">Nossos produtos</a></li>
+          <li id = "ourTeam"><a href="pages/embreve.html">Nossa equipe</a></li>
+          <li id = "entrarHeader"><a href="pages/login.html">Entrar</a></li>
           <li id = "sairHeader"><p>Sair</p></li>
           <li id = "loggedButtons">
             <div>
-              <button id="cart-button"><img src="../assets/Shopping Cart.svg" alt=""></button>
-              <button id="user-button"><img src="../assets/User.svg" alt=""></button>
+              <button id="cart-button"><img src="assets/Shopping Cart.svg" alt=""></button>
+              <button id="user-button"><img src="assets/User.svg" alt=""></button>
             </div>
           </li>
         </ul>
@@ -46,7 +46,7 @@
         <div class="modal-content">
           <div class="modalHeader">
             <h2 class="h2Cart">Carrinho</h2>
-            <img class="close" src="../assets/vectors/close_icon.svg" alt="Fechar">
+            <img class="close" src="assets/vectors/close_icon.svg" alt="Fechar">
           </div>
           
           <div class="main-cart">
@@ -55,7 +55,7 @@
                 <span>Camisetas</span>
                 <div class="card-item">
                   <div class="image-box">
-                    <img class="item-image" src="../assets/camiseta-branca2.png" alt="item">
+                    <img class="item-image" src="assets/camiseta-branca2.png" alt="item">
                   </div>
                   <div class="item-info">
 
@@ -91,11 +91,11 @@
         <h1>Categorias</h1>
         <ul>
           <li>
-            <a id="camisetas" class="card" href="camisetas.html">Camisetas</a>
+            <a id="camisetas" class="card" href="pages/camisetas.html">Camisetas</a>
           </li>
-          <li><a id="canecas" class="card" href="embreve.html">Canecas</a></li>
-          <li><a id="moletons" class="card" href="embreve.html">Moletons</a></li>
-          <li><a id="broches" class="card" href="embreve.html">Broches</a></li>
+          <li><a id="canecas" class="card" href="pages/embreve.html">Canecas</a></li>
+          <li><a id="moletons" class="card" href="pages/embreve.html">Moletons</a></li>
+          <li><a id="broches" class="card" href="pages/embreve.html">Broches</a></li>
         </ul>
       </section>
 
@@ -103,15 +103,15 @@
         <div class="informacoes_footer">
           <!-- Logo -->
           <div>
-            <img src="../assets/logo.png" alt="logo hut8" />
+            <img src="assets/logo.png" alt="logo hut8" />
           </div>
           <!-- Lista das páginas -->
           <div class="navigation">
             <ul>
               <li><a href="http://www.hut8.com.br" target="_blank">Home</a></li>
-              <li><a id="" class="" href="embreve.html">Projetos</a></li>
+              <li><a id="" class="" href="pages/embreve.html">Projetos</a></li>
               <li><a id="" class="" href="index.html">Nossos produtos</a></li>
-              <li><a id="" class="" href="embreve.html">Nossa equipe</a></li>
+              <li><a id="" class="" href="pages/embreve.html">Nossa equipe</a></li>
             </ul>
           </div>
           <!-- Endereço -->
@@ -127,23 +127,23 @@
             <p>Encontre a gente nas redes!</p>
             <ul class="redes">
               <li>
-                <a href=""
-                  ><img src="../assets/twitter.png" alt="imagem do twitter"
+                <a href="https://twitter.com/huteight" target="_blank"
+                  ><img src="assets/twitter.png" alt="imagem do twitter"
                 /></a>
               </li>
               <li>
-                <a href=""
-                  ><img src="../assets/facebook.png" alt="imagem do facebook"
+                <a href="https://www.facebook.com/hutEight/" target="_blank"
+                  ><img src="assets/facebook.png" alt="imagem do facebook"
                 /></a>
               </li>
               <li>
-                <a href=""
-                  ><img src="../assets/instagram.png" alt="imagem do instagram"
+                <a href="https://www.instagram.com/hut8_jr/" target="_blank"
+                  ><img src="assets/instagram.png" alt="imagem do instagram"
                 /></a>
               </li>
               <li>
-                <a href=""
-                  ><img src="../assets/linkedin.png" alt="imagem do linkedin"
+                <a href="https://www.linkedin.com/company/hut8/" target="_blank"
+                  ><img src="assets/linkedin.png" alt="imagem do linkedin"
                 /></a>
               </li>
             </ul>

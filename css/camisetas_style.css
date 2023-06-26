@@ -99,25 +99,50 @@ html{
     bottom:0%;
     border-radius: 0 0 16px 16px;
     align-items: center;
-    gap: 1.25rem;
-    
+    padding: 0;
 }
 
 .quantity-buttons-card 
-#first-item-card, 
-#add-card, 
-#minus-card{
+.first-item-card, 
+.add-card, 
+.minus-card
+{
     color: #FFFFFF;
     font-size:1.5rem;
+    cursor: pointer;
+    background-color: transparent;
+    border: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .quantity-buttons-card 
-#add-card, 
-#minus-card,
-#first-item-card
+.first-item-card:hover, 
+.add-card:hover, 
+.minus-card:hover
 {
-    background-color: transparent;
-    border: 0;
+    background-color: #36004b;
+}
+
+.minus-card{
+    border-radius: 0px 0px 0px 16px;
+    text-align: left;
+    text-indent: 95px;
+}
+
+.add-card{
+    border-radius: 0px 0px 16px 0px;
+    text-align: left;
+    text-indent: 20px;
+}
+
+.quantity-buttons-card form{
+    height: 100%;
+    width: 20%;
+}
+
+.first-item-card{
+    padding: 0;
 }
 
 .card-info{
@@ -129,7 +154,11 @@ html{
     flex: 1;
 }
 
-#first-item-card{
+.quantity-buttons-card form{
+    width: 100px;
+}
+
+.first-item-card{
     text-align: center;
     height: auto;
     background-color: transparent;

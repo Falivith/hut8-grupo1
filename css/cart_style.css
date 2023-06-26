@@ -91,16 +91,41 @@
     font-size: 1rem;
 }
 
-.quantity-buttons-cart 
-#first-item-cart, 
+.quantity-buttons-cart {
+    background-color: #64008A;
+    display: flex;
+    flex-direction: row;
+    width: 7.5rem;
+    height: 32px;
+    justify-content: space-evenly; 
+    border-radius: 4px;
+    align-items: center;
+}
+
+.quantity-buttons-cart form input
+{
+    display: flex;
+    height: 100%;
+    padding: 0;
+}
+
+.first-item-cart, 
 #minus-cart, 
 #add-cart
 {
     color: #FFFFFF;
-    font-size:1rem;
+    font-size: 20px;
+    width: 100%;
+    height: 100%;
 }
 
-.quantity-buttons-cart 
+.first-item-cart:hover, 
+#add-cart:hover, 
+#minus-cart:hover
+{
+    background-color: #36004b;
+}
+
 #minus-cart, 
 #add-cart
 {
@@ -122,24 +147,13 @@
     transition: .3s;
 }
 
-.quantity-buttons-cart {
-    background-color: #64008A;
-    display: flex;
-    flex-direction: row;
-    width: 7.5rem;
-    height: 2.125rem;
-    justify-content: space-evenly; 
-    border-radius: 4px;
-    align-items: center;
-}
-
-#first-item-cart{
+.first-item-cart{
     text-align: center;
     background-color: transparent;
     border: 0;
 }
 
-.quantity-buttons #first-item-cart{
+.first-item-cart{
     height: 100%;
 }
 
@@ -157,7 +171,7 @@
     text-align: center;
 }
 
-.continueShopping #add-cart, #minus-cart, #go-to-payment{
+.continueShopping #go-to-payment{
     font-family: 'Montserrat', sans-serif;
     background-color: #64008A;
     color: white;
