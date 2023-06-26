@@ -37,7 +37,15 @@ let items = [
     },
 ];
 
-let cartObject = {}
+//TODO: Otimizar a criacao desse objeto aqui!! relacionar com a qtd de itens que tem na determinada pagina
+let cartObject = {
+    camisa1: 0,
+    camisa2: 0,
+    camisa3: 0,
+    camisa4: 0,
+    camisa5: 0,
+    camisa6: 0,
+}
 
 function addCamisa(item) {
     let container = document.getElementsByClassName("card-box")[0];
@@ -102,42 +110,43 @@ function addCamisa(item) {
 }
 
 function updateCart(card){
+    var storedCart = sessionStorage.getItem('cart');
+    if (storedCart) {
+        cartObject = JSON.parse(storedCart);
+    }
     console.log("ID ", card.id);
-    console.log(card.children[0].children[1].children[1].children[0].value);
+    let input = card.children[0].children[1].children[1].children[0].value;
+    let currentValue = parseInt(input);
+
+    if (isNaN(currentValue)) {
+        input.value = 0;
+        currentValue = 0;
+    }else if (currentValue > 0) {
+        input.value = currentValue; 
+    }else{
+        input.value = 0;
+    }
+
+    let key = "cami" + card.id;
+    cartObject[key] = currentValue;
+    console.log("Objeto atualizado:", cartObject);
+    sessionStorage.setItem('cart', JSON.stringify(cartObject));
+
 }
+ 
 
 document.addEventListener('DOMContentLoaded', function(){
-
     items.forEach(item => addCamisa(item));
-
-
-
-    // Objetos no Carrinho
-
-    sessionStorage.setItem('cartItems', JSON.stringify({camiseta: 1,
-    camisa: 2}))
-
-    cartObjectSerialized = sessionStorage.getItem('cartItems');
-    cartObject = JSON.parse(cartObjectSerialized);
-    console.log(cartObject);
-
-
-
 
     let cardBox = document.querySelector('.card-box');
     let cards = cardBox.getElementsByClassName('card');
     
     for (let i = 0; i < cards.length; i++) {
         let card = cards[i];
-        
         let quantityInput = card.getElementsByClassName('first-item-card');
-
         let minusButton = card.getElementsByClassName('minus-card')[0];
-
         let plusButton = card.getElementsByClassName('add-card')[0];
-
         minusButton.addEventListener('click', createDecrementHandler(quantityInput[0], card));
-        
         plusButton.addEventListener('click', createIncrementHandler(quantityInput[0], card));
     }
     
@@ -150,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function(){
             }else if (currentValue > 0) {
                 input.value = currentValue - 1;
             }
-
+            
             updateCart(card);
         };
     }

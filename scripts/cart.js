@@ -1,18 +1,3 @@
-let cart = {
-  camisas: {
-    something: true,
-    other: 10
-  },
-  broches: {
-
-  },
-  moletons: {
-
-  },
-  canecas:{
-
-  }
-}
 
 document.addEventListener('DOMContentLoaded', function(){
     let cartButton = document.getElementById("cart-button");
@@ -30,11 +15,6 @@ document.addEventListener('DOMContentLoaded', function(){
 
 
 document.addEventListener('DOMContentLoaded', function(){
-
-
     let quantiaCadaItem = document.getElementsByClassName('first-item-card');
-
-    
-
     console.log(quantiaCadaItem);
 });
