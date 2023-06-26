@@ -14,7 +14,6 @@ document.addEventListener('DOMContentLoaded', function(){
     const sairHeader = document.querySelector('#sairHeader');
 
     const list = document.getElementById('hrefList');
-    console.log(list);
 
     let isLogged = sessionStorage.getItem('token');
 

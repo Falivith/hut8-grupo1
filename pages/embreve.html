@@ -14,6 +14,8 @@
     <link rel="stylesheet" href="../css/index_style.css" />
     <link rel="stylesheet" href="../css/footer_style.css" />
     <link rel="stylesheet" href="../css/cart_style.css" />
+    <script src="scripts/header.js"></script>
+    <script src="scripts/cart.js"></script>
     <title>Em breve</title>
   </head>
   <body>
@@ -37,6 +39,51 @@
           </li>
         </ul>
       </header>
+
+      <div id="cart-modal" class="modal">
+        <div class="modal-content">
+          <div class="modalHeader">
+            <h2 class="h2Cart">Carrinho</h2>
+            <img class="close" src="../assets/vectors/close_icon.svg" alt="Fechar">
+          </div>
+          
+          <div class="main-cart">
+            <section>
+              <div class="products">
+                <span>Camisetas</span>
+                <div class="card-item">
+                  <div class="image-box">
+                    <img class="item-image" src="../assets/camiseta-branca2.png" alt="item">
+                  </div>
+                  <div class="item-info">
+    
+                    <div class="info">
+                      <p>Camiseta Roxa</p>
+                      <p>R$ 40,00 </p>
+                    </div>
+                    
+                    <div class="quantity-buttons-cart">
+                      <button id="minus-cart">-</button>
+                      <form>
+                        <input type="text" id="first-item-cart" value="1" size="1" />
+                      </form>
+                      <button id="add-cart">+</button>
+                    </div>
+    
+                  </div>
+                </div>
+                <span>Total a Pagar: <b>R$ 40,00</b></span>
+              </div>
+    
+              <div class="continueShopping">
+                <span>Continuar Comprando</span>
+                <button id="go-to-payment">Ir para pagamento</button>
+              </div>
+            </section>
+          </div>
+          
+        </div>
+      </div> 
 
       <section class = "main_section">
         <h1>Em breve</h1>
@@ -100,6 +147,5 @@
         </div>
       </footer>
     </div>
-    <script src="../scripts/script.js"></script>
   </body>
 </html>

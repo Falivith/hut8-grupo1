@@ -14,21 +14,6 @@ let cart = {
   }
 }
 
-sessionStorage.setItem('cart', cart);
-
-function loadScript(url, callback) {
-  var script = document.createElement('script');
-  script.src = url;
-  script.onload = callback;
-  document.head.appendChild(script);
-}
-
-loadScript('items.js', function() {
-  document.addEventListener('DOMContentLoaded', function(){
-  });
-});
-
-
 document.addEventListener('DOMContentLoaded', function(){
     let cartButton = document.getElementById("cart-button");
     let cartModal = document.getElementById("cart-modal");
@@ -41,4 +26,15 @@ document.addEventListener('DOMContentLoaded', function(){
     closeBtn.addEventListener("click", function() {
       cartModal.style.display = "none";
     });
+});
+
+
+document.addEventListener('DOMContentLoaded', function(){
+
+
+    let quantiaCadaItem = document.getElementsByClassName('first-item-card');
+
+    
+
+    console.log(quantiaCadaItem);
 });
