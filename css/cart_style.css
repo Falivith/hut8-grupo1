@@ -111,7 +111,7 @@
     align-items: center;
 }
 
-.first-item-cart, 
+#first-item-cart, 
 #minus-cart, 
 #add-cart
 {
@@ -119,7 +119,7 @@
     font-size: 20px;
 }
 
-.first-item-cart:hover, 
+#first-item-cart:hover, 
 #add-cart:hover, 
 #minus-cart:hover
 {
@@ -147,7 +147,7 @@
     transition: .3s;
 }
 
-.first-item-cart{
+#first-item-cart{
     text-align: center;
     background-color: transparent;
     border: 0;
