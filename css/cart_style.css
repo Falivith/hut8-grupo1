@@ -1,7 +1,7 @@
 .modal {
     display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 2;
     width: 100%;
     height: 100%;
     overflow: auto;
@@ -24,11 +24,11 @@
     color: #64008A;
 }
 
-.main{
+.main-cart{
     height: 100%;
 }
 
-.main section{
+.main-cart section{
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -91,12 +91,19 @@
     font-size: 1rem;
 }
 
-.quantity-buttons input, button {
+.quantity-buttons-cart 
+#first-item-cart, 
+#minus-cart, 
+#add-cart
+{
     color: #FFFFFF;
     font-size:1rem;
 }
 
-.quantity-buttons button{
+.quantity-buttons-cart 
+#minus-cart, 
+#add-cart
+{
     background-color: transparent;
     border: 0;
     cursor: pointer;
@@ -106,12 +113,16 @@
     transition: .3s;
 }
 
-.quantity-buttons button:hover{
+#go-to-payment{
+    background-color: #64008A;
+}
+
+#go-to-payment:hover{
     background-color: #310144;
     transition: .3s;
 }
 
-.quantity-buttons{
+.quantity-buttons-cart {
     background-color: #64008A;
     display: flex;
     flex-direction: row;
@@ -122,13 +133,13 @@
     align-items: center;
 }
 
-#first-item{
+#first-item-cart{
     text-align: center;
     background-color: transparent;
     border: 0;
 }
 
-.quantity-buttons form{
+.quantity-buttons #first-item-cart{
     height: 100%;
 }
 
@@ -146,7 +157,7 @@
     text-align: center;
 }
 
-.continueShopping button{
+.continueShopping #add-cart, #minus-cart, #go-to-payment{
     font-family: 'Montserrat', sans-serif;
     background-color: #64008A;
     color: white;

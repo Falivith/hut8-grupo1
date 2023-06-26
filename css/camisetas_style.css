@@ -87,7 +87,7 @@ html{
     border-radius: 16px;
 }
 
-.quantity-buttons{
+.quantity-buttons-card{
     background-color: #64008A;
     display: flex;
     flex-direction: row;
@@ -103,11 +103,19 @@ html{
     
 }
 
-.quantity-buttons input, button {
+.quantity-buttons-card 
+#first-item-card, 
+#add-card, 
+#minus-card{
     color: #FFFFFF;
     font-size:1.5rem;
 }
-.quantity-buttons button{
+
+.quantity-buttons-card 
+#add-card, 
+#minus-card,
+#first-item-card
+{
     background-color: transparent;
     border: 0;
 }
@@ -121,7 +129,7 @@ html{
     flex: 1;
 }
 
-#first-item{
+#first-item-card{
     text-align: center;
     height: auto;
     background-color: transparent;

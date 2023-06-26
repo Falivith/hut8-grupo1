@@ -13,9 +13,55 @@
     <link rel="stylesheet" href="../css/camisetas_style.css" />
 
     <link rel="stylesheet" href="../css/header_style.css" />
+    <link rel="stylesheet" href="../css/cart_style.css" />
     <link rel="stylesheet" href="../css/footer_style.css" />
+    <script src="../scripts/cart.js"></script>
     <title>Camisetas</title>
   </head>
+  <div id="cart-modal" class="modal">
+    <div class="modal-content">
+      <div class="modalHeader">
+        <h2 class="h2Cart">Carrinho</h2>
+        <img class="close" src="../assets/vectors/close_icon.svg" alt="Fechar">
+      </div>
+      
+      <div class="main-cart">
+        <section>
+          <div class="products">
+            <span>Camisetas</span>
+            <div class="card-item">
+              <div class="image-box">
+                <img class="item-image" src="../assets/camiseta-branca2.png" alt="item">
+              </div>
+              <div class="item-info">
+
+                <div class="info">
+                  <p>Camiseta Roxa</p>
+                  <p>R$ 40,00 </p>
+                </div>
+                
+                <div class="quantity-buttons-cart">
+                  <button id="minus-cart">-</button>
+                  <form>
+                    <input type="text" id="first-item-cart" value="1" size="1" />
+                  </form>
+                  <button id="add-cart">+</button>
+                </div>
+
+              </div>
+            </div>
+            <span>Total a Pagar: <b>R$ 40,00</b></span>
+          </div>
+
+          <div class="continueShopping">
+            <span>Continuar Comprando</span>
+            <button id="go-to-payment">Ir para pagamento</button>
+          </div>
+        </section>
+      </div>
+      
+    </div>
+  </div> 
   <body>
     <div class="container">
       <header id="dynamicHeader">
@@ -61,12 +107,12 @@
                 src="../assets/camiseta-roxa.png"
                 alt="Camiseta roxa"
               />
-              <div class="quantity-buttons">
-                <button>-</button>
+              <div class="quantity-buttons-card">
+                <button id="minus-card">-</button>
                 <form>
-                  <input type="text" id="first-item" value="0" size="1" />
+                  <input type="text" id="first-item-card" value="0" size="1" />
                 </form>
-                <button>+</button>
+                <button id="add-card">+</button>
               </div>
             </div>
             <div class="card-info">
@@ -82,12 +128,12 @@
                 src="../assets/camiseta-branca2.png"
                 alt="Camiseta roxa"
               />
-              <div class="quantity-buttons">
-                <button>-</button>
+              <div class="quantity-buttons-card">
+                <button id="minus-card">-</button>
                 <form>
-                  <input type="text" id="first-item" value="0" size="1" />
+                  <input type="text" id="first-item-card" value="0" size="1" />
                 </form>
-                <button>+</button>
+                <button id="add-card">+</button>
               </div>
             </div>
             <div class="card-info">
@@ -103,12 +149,12 @@
                 src="../assets/camiseta-preta-logo-gigante-2.png"
                 alt="Camiseta roxa"
               />
-              <div class="quantity-buttons">
-                <button>-</button>
+              <div class="quantity-buttons-card">
+                <button id="minus-card">-</button>
                 <form>
-                  <input type="text" id="first-item" value="0" size="1" />
+                  <input type="text" id="first-item-card" value="0" size="1" />
                 </form>
-                <button>+</button>
+                <button id="add-card">+</button>
               </div>
             </div>
             <div class="card-info">
@@ -124,12 +170,12 @@
                 src="../assets/camiseta-preta-com-detalhe.png"
                 alt="Camiseta roxa"
               />
-              <div class="quantity-buttons">
-                <button>-</button>
+              <div class="quantity-buttons-card">
+                <button id="minus-card">-</button>
                 <form>
-                  <input type="text" id="first-item" value="0" size="1" />
+                  <input type="text" id="first-item-card" value="0" size="1" />
                 </form>
-                <button>+</button>
+                <button id="add-card">+</button>
               </div>
             </div>
             <div class="card-info">
@@ -145,12 +191,12 @@
                 src="../assets/camiseta-preta-logo-gigante-1.png"
                 alt="Camiseta roxa"
               />
-              <div class="quantity-buttons">
-                <button>-</button>
+              <div class="quantity-buttons-card">
+                <button id="minus-card">-</button>
                 <form>
-                  <input type="text" id="first-item" value="0" size="1" />
+                  <input type="text" id="first-item-card" value="0" size="1" />
                 </form>
-                <button>+</button>
+                <button id="add-card">+</button>
               </div>
             </div>
             <div class="card-info">
@@ -166,12 +212,12 @@
                 src="../assets/camiseta-preta-logo-branco.png"
                 alt="Camiseta roxa"
               />
-              <div class="quantity-buttons">
-                <button>-</button>
+              <div class="quantity-buttons-card">
+                <button id="minus-card">-</button>
                 <form>
-                  <input type="text" id="first-item" value="0" size="1" />
+                  <input type="text" id="first-item-card" value="0" size="1" />
                 </form>
-                <button>+</button>
+                <button id="add-card">+</button>
               </div>
             </div>
             <div class="card-info">
