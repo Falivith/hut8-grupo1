@@ -34,20 +34,16 @@ html{
     display: flex;
     width: 100%;
     align-items: center;
-    justify-content: center;
-    
+    justify-content: space-between;
+    margin-bottom: 50px;
 }
 
 #main-header-text{
-    font-size: 2rem;
+    font-size: 1.5rem;
     font-weight: 700;
     color: #64008A;
 }
 
-#arrow{
-    left: 3rem;
-    position: absolute;
-}
 #main-header-text{
     position: inherit;
 }

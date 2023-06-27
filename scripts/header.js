@@ -40,12 +40,6 @@ document.addEventListener('DOMContentLoaded', function(){
         case "Camisetas":
             list.children[2].children[0].style.fontWeight = '700';
             break;
-        case "Camisetas":
-            list.children[2].children[0].style.fontWeight = '700';
-            break;
-        case "Camisetas":
-            list.children[2].children[0].style.fontWeight = '700';
-            break;
         default:
             break;
     }

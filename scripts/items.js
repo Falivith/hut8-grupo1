@@ -1,4 +1,4 @@
-let items = [
+const camisetas = [
     {
         id: 1,
         image: "../assets/camiseta-roxa.png",
@@ -37,15 +37,7 @@ let items = [
     },
 ];
 
-//TODO: Otimizar a criacao desse objeto aqui!! relacionar com a qtd de itens que tem na determinada pagina
-let cartObject = {
-    camisa1: 0,
-    camisa2: 0,
-    camisa3: 0,
-    camisa4: 0,
-    camisa5: 0,
-    camisa6: 0,
-}
+let cartObject = {}
 
 function addCamisa(item) {
     let container = document.getElementsByClassName("card-box")[0];
@@ -110,33 +102,41 @@ function addCamisa(item) {
 }
 
 function updateCart(card){
+
     var storedCart = sessionStorage.getItem('cart');
+    
     if (storedCart) {
         cartObject = JSON.parse(storedCart);
     }
-    console.log("ID ", card.id);
+
     let input = card.children[0].children[1].children[1].children[0].value;
     let currentValue = parseInt(input);
+
+    let deleteKey = "camisa" + card.id
 
     if (isNaN(currentValue)) {
         input.value = 0;
         currentValue = 0;
+        delete cartObject[deleteKey];
+
     }else if (currentValue > 0) {
         input.value = currentValue; 
     }else{
         input.value = 0;
+
+        delete cartObject[deleteKey];
+        console.log(cartObject, deleteKey, cartObject[deleteKey]);
+        sessionStorage.setItem('cart', JSON.stringify(cartObject));
+        return;
     }
 
-    let key = "cami" + card.id;
+    let key = "camisa" + card.id;
     cartObject[key] = currentValue;
-    console.log("Objeto atualizado:", cartObject);
     sessionStorage.setItem('cart', JSON.stringify(cartObject));
-
 }
  
-
 document.addEventListener('DOMContentLoaded', function(){
-    items.forEach(item => addCamisa(item));
+    camisetas.forEach(item => addCamisa(item));
 
     let cardBox = document.querySelector('.card-box');
     let cards = cardBox.getElementsByClassName('card');
