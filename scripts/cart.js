@@ -12,6 +12,15 @@ document.addEventListener('DOMContentLoaded', function(){
   closeBtn.addEventListener("click", function() {
     cartModal.style.display = "none";
   });
+
+  cartModal.addEventListener("click", function(event) {
+    if (cartModal === event.target || !cartModal.contains(event.target)) {
+      console.log('clicou fora do local!');
+      cartModal.style.display = "none";
+    } else {
+      console.log('clicou dentro do local!');
+    }
+    });
 });
 
 function persistentCart(){
