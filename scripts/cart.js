@@ -10,14 +10,15 @@ document.addEventListener('DOMContentLoaded', function(){
   
   closeBtn.addEventListener("click", function() {
     cartModal.style.display = "none";
+    window.location.href = window.location.href
   });
 
-  cartModal.addEventListener("click", function(event) {
-    if (cartModal === event.target || !cartModal.contains(event.target)) {
-      console.log('clicou fora do local!');
-      cartModal.style.display = "none";
-    }
-    });
+  // cartModal.addEventListener("click", function(event) {
+  //   if (cartModal === event.target || !cartModal.contains(event.target)) {
+  //     console.log('clicou fora do local!');
+  //     cartModal.style.display = "none";
+  //   }
+  // });
 });
 
 function persistentCart(){
@@ -69,6 +70,14 @@ function addEventListenersToCartItems(){
       let plusButton = card.getElementsByClassName('add-cart')[0];
       minusButton.addEventListener('click', createDecrementHandlerCart(quantityInput[0], card));
       plusButton.addEventListener('click', createIncrementHandlerCart(quantityInput[0], card));
+
+      // minusButton.addEventListener('click', function(event) {
+      //   event.stopPropagation();
+      // });
+  
+      // plusButton.addEventListener('click', function(event) {
+      //   event.stopPropagation();
+      // });
   }
 }
 
@@ -166,19 +175,17 @@ function updateCartFromCart(card, input){
       delete cartObject[deleteKey];
       console.log(cartObject, deleteKey, cartObject[deleteKey]);
       sessionStorage.setItem('cart', JSON.stringify(cartObject));
+      persistentCart();
       return;
   }
 
   let price = 0;
-
-
-
   let finalPrice = document.getElementById('totalPrice');
   finalPrice.textContent = "R$ " + price + ",00"
-
   let key = "camisa" + card.id;
   cartObject[key] = currentValueCart;
   sessionStorage.setItem('cart', JSON.stringify(cartObject));
+  persistentCart();
 }
 
 const camisetasData = [
@@ -233,6 +240,7 @@ function createDecrementHandlerCart(input, card) {
 
       if(isNaN(currentValue)){
           input.value = 0;
+          return
       }else if (currentValue > 0) {
           input.value = currentValue - 1;
       }

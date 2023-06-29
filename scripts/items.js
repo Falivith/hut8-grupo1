@@ -71,6 +71,7 @@ function addCamisa(item) {
     quantityInput.size = "1";
     form.appendChild(quantityInput);
 
+
     let increaseButton = document.createElement("button");
     increaseButton.textContent = "+";
     increaseButton.className = "add-card";
@@ -100,7 +101,6 @@ function addCamisa(item) {
 
     container.appendChild(card);
 }
-
 function updateCart(card){
 
     let storedCart = sessionStorage.getItem('cart');
@@ -132,6 +132,7 @@ function updateCart(card){
     let key = "camisa" + card.id;
     cartObject[key] = currentValue;
     sessionStorage.setItem('cart', JSON.stringify(cartObject));
+    persistentCart();
 }
  
 document.addEventListener('DOMContentLoaded', function(){
@@ -139,25 +140,27 @@ document.addEventListener('DOMContentLoaded', function(){
 
     let cardBox = document.querySelector('.card-box');
     let cards = cardBox.getElementsByClassName('card');
-    // let storedCart = sessionStorage.getItem('cart');
+    let storedCart = sessionStorage.getItem('cart');
 
-    // let ex = JSON.parse(storedCart);
-    // console.log(ex);
-    // let keyCoisinha = "camisa" + 1
-    // console.log(ex[keyCoisinha]);
+    let cartJson = JSON.parse(storedCart);
     
-    // for (const item in storedCart){
-    //     if(storedCart.hasOwnProperty(item)){
-    //       let id = parseInt(item[item.length - 1], 10);
-    //     }
-    //   }
     for (let i = 0; i < cards.length; i++) {
         let card = cards[i];
+        
         let quantityInput = card.getElementsByClassName('first-item-card');
         let minusButton = card.getElementsByClassName('minus-card')[0];
         let plusButton = card.getElementsByClassName('add-card')[0];
         minusButton.addEventListener('click', createDecrementHandler(quantityInput[0], card));
         plusButton.addEventListener('click', createIncrementHandler(quantityInput[0], card));
+
+        let id = card.getAttribute('id');
+        let nomeItem = "camisa" + id;
+        
+        if (cartJson.hasOwnProperty(nomeItem)) {
+            let quantidadeAdicionada = cartJson[nomeItem];
+            console.log(cartJson[nomeItem], quantityInput.value)
+            quantityInput[0].value = quantidadeAdicionada;
+        }
     }
 });
 
