@@ -141,9 +141,8 @@ document.addEventListener('DOMContentLoaded', function(){
     let cardBox = document.querySelector('.card-box');
     let cards = cardBox.getElementsByClassName('card');
     let storedCart = sessionStorage.getItem('cart');
-
     let cartJson = JSON.parse(storedCart);
-    
+
     for (let i = 0; i < cards.length; i++) {
         let card = cards[i];
         
@@ -155,11 +154,12 @@ document.addEventListener('DOMContentLoaded', function(){
 
         let id = card.getAttribute('id');
         let nomeItem = "camisa" + id;
-        
-        if (cartJson.hasOwnProperty(nomeItem)) {
-            let quantidadeAdicionada = cartJson[nomeItem];
-            console.log(cartJson[nomeItem], quantityInput.value)
-            quantityInput[0].value = quantidadeAdicionada;
+        if(cartJson){
+            if (cartJson.hasOwnProperty(nomeItem)) {
+                let quantidadeAdicionada = cartJson[nomeItem];
+                console.log(cartJson[nomeItem], quantityInput.value)
+                quantityInput[0].value = quantidadeAdicionada;
+            }
         }
     }
 });
@@ -182,7 +182,7 @@ function createIncrementHandler(input, card) {
     return function () {
 
         let currentValue = parseInt(input.value);
-        
+        console.log(currentValue);
         if(isNaN(currentValue)){
             input.value = 1;
             return
