@@ -111,23 +111,23 @@
     align-items: center;
 }
 
-#first-item-cart, 
-#minus-cart, 
-#add-cart
+.first-item-cart, 
+.minus-cart, 
+.add-cart
 {
     color: #FFFFFF;
     font-size: 20px;
 }
 
-#first-item-cart:hover, 
-#add-cart:hover, 
-#minus-cart:hover
+.first-item-cart:hover, 
+.add-cart:hover, 
+.minus-cart:hover
 {
     background-color: #36004b;
 }
 
-#minus-cart, 
-#add-cart
+.minus-cart, 
+.add-cart
 {
     background-color: transparent;
     border: 0;
@@ -147,7 +147,7 @@
     transition: .3s;
 }
 
-#first-item-cart{
+.first-item-cart{
     text-align: center;
     background-color: transparent;
     border: 0;

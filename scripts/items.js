@@ -103,7 +103,7 @@ function addCamisa(item) {
 
 function updateCart(card){
 
-    var storedCart = sessionStorage.getItem('cart');
+    let storedCart = sessionStorage.getItem('cart');
     
     if (storedCart) {
         cartObject = JSON.parse(storedCart);
@@ -125,7 +125,6 @@ function updateCart(card){
         input.value = 0;
 
         delete cartObject[deleteKey];
-        console.log(cartObject, deleteKey, cartObject[deleteKey]);
         sessionStorage.setItem('cart', JSON.stringify(cartObject));
         return;
     }
@@ -140,7 +139,18 @@ document.addEventListener('DOMContentLoaded', function(){
 
     let cardBox = document.querySelector('.card-box');
     let cards = cardBox.getElementsByClassName('card');
+    // let storedCart = sessionStorage.getItem('cart');
+
+    // let ex = JSON.parse(storedCart);
+    // console.log(ex);
+    // let keyCoisinha = "camisa" + 1
+    // console.log(ex[keyCoisinha]);
     
+    // for (const item in storedCart){
+    //     if(storedCart.hasOwnProperty(item)){
+    //       let id = parseInt(item[item.length - 1], 10);
+    //     }
+    //   }
     for (let i = 0; i < cards.length; i++) {
         let card = cards[i];
         let quantityInput = card.getElementsByClassName('first-item-card');
@@ -149,34 +159,34 @@ document.addEventListener('DOMContentLoaded', function(){
         minusButton.addEventListener('click', createDecrementHandler(quantityInput[0], card));
         plusButton.addEventListener('click', createIncrementHandler(quantityInput[0], card));
     }
-    
-    function createDecrementHandler(input, card) {
-        return function () {
-            let currentValue = parseInt(input.value);
-
-            if(isNaN(currentValue)){
-                input.value = 0;
-            }else if (currentValue > 0) {
-                input.value = currentValue - 1;
-            }
-            
-            updateCart(card);
-        };
-    }
-
-    function createIncrementHandler(input, card) {
-        return function () {
-
-            let currentValue = parseInt(input.value);
-            
-            if(isNaN(currentValue)){
-                input.value = 1;
-                return
-            }else{
-                input.value = currentValue + 1;   
-            }
-
-            updateCart(card);
-        };
-    }
 });
+
+function createDecrementHandler(input, card) {
+    return function () {
+        let currentValue = parseInt(input.value);
+
+        if(isNaN(currentValue)){
+            input.value = 0;
+        }else if (currentValue > 0) {
+            input.value = currentValue - 1;
+        }
+        
+        updateCart(card);
+    };
+}
+
+function createIncrementHandler(input, card) {
+    return function () {
+
+        let currentValue = parseInt(input.value);
+        
+        if(isNaN(currentValue)){
+            input.value = 1;
+            return
+        }else{
+            input.value = currentValue + 1;   
+        }
+
+        updateCart(card);
+    };
+}

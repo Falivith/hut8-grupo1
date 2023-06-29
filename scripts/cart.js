@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function(){
   let cartButton = document.getElementById("cart-button");
   let cartModal = document.getElementById("cart-modal");
@@ -17,8 +16,6 @@ document.addEventListener('DOMContentLoaded', function(){
     if (cartModal === event.target || !cartModal.contains(event.target)) {
       console.log('clicou fora do local!');
       cartModal.style.display = "none";
-    } else {
-      console.log('clicou dentro do local!');
     }
     });
 });
@@ -48,16 +45,31 @@ function persistentCart(){
 
   for (const item in cart){
     if(cart.hasOwnProperty(item)){
-      if(cart[item] > 0){
-        let id = parseInt(item[item.length - 1], 10);
-        price += (camisetasData[id].priceInt) * cart[item];
-        renderCardItem(camisetasData[id], cart[item]);
-      }
+      let id = parseInt(item[item.length - 1], 10);
+      price += (camisetasData[id].priceInt) * cart[item];
+      renderCardItem(camisetasData[id], cart[item]);
     }
   }
 
   let finalPrice = document.getElementById('totalPrice');
   finalPrice.textContent = "R$ " + price + ",00"
+
+  addEventListenersToCartItems();
+}
+
+function addEventListenersToCartItems(){
+
+  let cardBox = document.getElementById('itemsContainer');
+  let cards = cardBox.getElementsByClassName('card-item');
+  
+  for (let i = 0; i < cards.length; i++) {
+      let card = cards[i];
+      let quantityInput = card.getElementsByClassName('first-item-cart');
+      let minusButton = card.getElementsByClassName('minus-cart')[0];
+      let plusButton = card.getElementsByClassName('add-cart')[0];
+      minusButton.addEventListener('click', createDecrementHandlerCart(quantityInput[0], card));
+      plusButton.addEventListener('click', createIncrementHandlerCart(quantityInput[0], card));
+  }
 }
 
 function renderCardItem(item, num) {
@@ -66,6 +78,7 @@ function renderCardItem(item, num) {
 
   const cardItem = document.createElement('div');
   cardItem.className = 'card-item';
+  cardItem.id = item.id;
 
   const imageBox = document.createElement('div');
   imageBox.className = 'image-box';
@@ -92,19 +105,19 @@ function renderCardItem(item, num) {
 
   const minusButton = document.createElement('button');
   minusButton.textContent = '-';
-  minusButton.id = 'minus-cart';
+  minusButton.className = 'minus-cart';
 
   const quantityForm = document.createElement('form');
 
   const quantityInput = document.createElement('input');
   quantityInput.type = 'text';
-  quantityInput.id = 'first-item-cart';
+  quantityInput.className = 'first-item-cart';
   quantityInput.value = num;
   quantityInput.size = '1';
 
   const addButton = document.createElement('button');
   addButton.textContent = '+';
-  addButton.id = 'add-cart';
+  addButton.className = 'add-cart';
 
   // Anexa os elementos na estrutura correta
   info.appendChild(itemNameElement);
@@ -127,6 +140,46 @@ function renderCardItem(item, num) {
   containerElement.appendChild(cardItem);
 }
 
+function updateCartFromCart(card, input){
+
+  var storedCart = sessionStorage.getItem('cart');
+  
+  if (storedCart) {
+      cartObject = JSON.parse(storedCart);
+  }
+
+  let inputCart = card.children[1].children[1].children[1].children[0].value;
+  let currentValueCart = parseInt(inputCart);
+
+  let deleteKey = "camisa" + card.id
+
+  if (isNaN(currentValueCart)) {
+      inputCart.value = 0;
+      currentValueCart = 0;
+      delete cartObject[deleteKey];
+
+  }else if (currentValueCart > 0) {
+      inputCart.value = currentValueCart; 
+  }else{
+      inputCart.value = 0;
+
+      delete cartObject[deleteKey];
+      console.log(cartObject, deleteKey, cartObject[deleteKey]);
+      sessionStorage.setItem('cart', JSON.stringify(cartObject));
+      return;
+  }
+
+  let price = 0;
+
+
+
+  let finalPrice = document.getElementById('totalPrice');
+  finalPrice.textContent = "R$ " + price + ",00"
+
+  let key = "camisa" + card.id;
+  cartObject[key] = currentValueCart;
+  sessionStorage.setItem('cart', JSON.stringify(cartObject));
+}
 
 const camisetasData = [
   {},
@@ -173,3 +226,33 @@ const camisetasData = [
       priceInt: 45
   },
 ];
+
+function createDecrementHandlerCart(input, card) {
+  return function () {
+      let currentValue = parseInt(input.value);
+
+      if(isNaN(currentValue)){
+          input.value = 0;
+      }else if (currentValue > 0) {
+          input.value = currentValue - 1;
+      }
+      
+      updateCartFromCart(card, input);
+  };
+}
+
+function createIncrementHandlerCart(input, card) {
+  return function () {
+
+      let currentValue = parseInt(input.value);
+      
+      if(isNaN(currentValue)){
+          input.value = 1;
+          return
+      }else{
+          input.value = currentValue + 1;   
+      }
+
+      updateCartFromCart(card, input);
+  };
+}
