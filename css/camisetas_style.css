@@ -15,7 +15,7 @@ html{
     outline: 0;
     font-size: 1rem;
     background: transparent;
-  }
+}
 
 .container{
     display:flex; 
@@ -48,7 +48,6 @@ html{
     position: inherit;
 }
 
-
 .card-box{
     display: flex;
     
@@ -66,7 +65,6 @@ html{
     justify-content: center;
     gap: 1.5rem;
     flex: 1;
-    
 }
 
 .card-image-box{
@@ -228,5 +226,13 @@ html{
         padding: 1rem;
         justify-content: space-evenly;
         gap: 1rem;
+    }
+
+    #arrow{
+        margin-left: 40px;
+    }
+
+    #main-header-text{
+        margin-right: 40px;
     }
 }

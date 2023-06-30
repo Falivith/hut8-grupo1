@@ -33,6 +33,14 @@ header ul li a{
     cursor: pointer;
 }
 
+#hrefList{
+    width: fit-content;
+}
+
+#loggedButtons{
+    display: flex;
+}
+
 #loggedButtons div{
     display: flex;
     align-items: center;
@@ -68,20 +76,30 @@ header ul{
     header ul{
         display: flex;
         justify-content: space-between;
-        width: 100%;
+        max-width: 99%;
         height: 80px;
         gap: 6%;
-        margin: 0 10px 0 10px;
         padding: 0;
+    }
+    #loggedButtons{
+        width: 32px;
+    }
+    #cart-button img{
+        width: 32px;
     }
     #logo{
         display: none;
     }
-    #loggedButtons div{
-        gap: 20px;
-    }
     #ourTeam{
         display: none;
+    }
+    #dynamicHeader{
+        justify-content: space-evenly;
+    }
+    #hrefList{
+        display: flex;
+        width: 80%;
+        justify-content: space-evenly;
     }
 }
 
@@ -91,6 +109,9 @@ header ul{
         justify-content: space-around;
     }
     #ourTeam{
+        display: none;
+    }
+    #user-button img{
         display: none;
     }
 }
