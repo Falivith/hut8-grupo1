@@ -18,12 +18,14 @@ html {
     font-size: 1rem;
     background: transparent;
     
-  }
+}
+
 p{
     padding: 0;
     margin: 0;
     font-weight: 500;
 }
+
 .container{
     display:flex; 
     justify-content: space-between;
@@ -47,10 +49,12 @@ p{
     background-repeat: no-repeat;
     flex-wrap: nowrap;
 }
+
 .introducao h1{
     font-size: 2rem;
     width: 20%;
 }
+
 .introducao p{
     width: 20%;
     line-height: 1.5rem;
@@ -68,20 +72,24 @@ p{
     color: white;
     cursor: pointer;
 }
+
 .sobre{
     display: flex;
     flex-direction: row;
 }
+
 .sobre h1{
     margin-bottom: 2rem;
     font-size: 2rem;
     width: 75%;
 }
+
 .sobre p{
     margin: 0.4rem 5rem;
     line-height: 1.5rem;
     width: 75%;
 }
+
 .quem_somos{
     display: flex;
     flex-direction: column;
@@ -91,6 +99,7 @@ p{
     background-color: #64008A;
     color: #fff;
 }
+
 .sobre_imagem{
     display: flex;
     justify-content: center;
@@ -108,6 +117,7 @@ p{
     background-repeat: no-repeat;
     background-position: center; 
 }
+
 .conteudo{
     display: flex;
     flex-direction: column;
@@ -127,7 +137,6 @@ p{
     line-height: 1.5rem;
 }
   
-
 #btn_portfolio{
     font-weight: bold;
     font-size: 1rem;
@@ -139,7 +148,6 @@ p{
     color: white;
     cursor: pointer;
 }
-
 
 .solucoes{
     display: flex;
