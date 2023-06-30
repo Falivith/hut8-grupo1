@@ -157,7 +157,6 @@ document.addEventListener('DOMContentLoaded', function(){
         if(cartJson){
             if (cartJson.hasOwnProperty(nomeItem)) {
                 let quantidadeAdicionada = cartJson[nomeItem];
-                console.log(cartJson[nomeItem], quantityInput.value)
                 quantityInput[0].value = quantidadeAdicionada;
             }
         }

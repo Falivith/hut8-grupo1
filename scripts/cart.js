@@ -26,6 +26,7 @@ function persistentCart(){
   // Limpa os elementos já renderizados do carrinho
   
   const containerElement = document.getElementById('itemsContainer');
+  const finalPrice = document.getElementById('totalPrice');
 
   while (containerElement.firstChild) {
     containerElement.removeChild(containerElement.firstChild);
@@ -35,6 +36,7 @@ function persistentCart(){
     console.log("O carrinho está vazio");
     let carth1 = document.getElementById('cart-h1');
     carth1.textContent = "O carrinho está vazio"
+    finalPrice.textContent = "R$ 00,00"
     carth1.style.margin = "auto";
     return;
   }
@@ -55,7 +57,6 @@ function persistentCart(){
     }
   }
 
-  let finalPrice = document.getElementById('totalPrice');
   finalPrice.textContent = "R$ " + price + ",00"
 
   addEventListenersToCartItems();
@@ -176,7 +177,6 @@ function updateCartFromCart(card, input){
       inputCart.value = 0;
 
       delete cartObject[deleteKey];
-      console.log(cartObject, deleteKey, cartObject[deleteKey]);
       sessionStorage.setItem('cart', JSON.stringify(cartObject));
       persistentCart();
       return;
@@ -184,7 +184,7 @@ function updateCartFromCart(card, input){
 
   let price = 0;
   let finalPrice = document.getElementById('totalPrice');
-  finalPrice.textContent = "R$ " + price + ",00"
+  finalPrice.textContent = "R$ " + price + ",00";
   let key = "camisa" + card.id;
   cartObject[key] = currentValueCart;
   sessionStorage.setItem('cart', JSON.stringify(cartObject));
