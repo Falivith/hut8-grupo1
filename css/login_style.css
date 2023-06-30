@@ -2,7 +2,7 @@
     font-family: 'Montserrat', sans-serif;
 }
 
-section{
+.login_section{
     width: 70%;
     max-width: 550px;
     margin: 40px auto;
@@ -20,17 +20,17 @@ section{
     margin-bottom: 40px;
 }
 
-h1, span{
+.login_section > div > h1, span{
     font-weight: 500;
 }
 
-span{
+.login_section > span{
     display: flex;
     font-size: 1.5em;
     margin: 40px auto;
 }
 
-input{
+.login_section > div > form > input{
     height: 2rem;
     padding-left: 10px;
     font-size: 16px;

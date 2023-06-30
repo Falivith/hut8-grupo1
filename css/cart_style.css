@@ -29,7 +29,8 @@
 }
 
 .main-cart section{
-    height: 95%;
+    max-height: fit-content;
+    max-height: 90%;
     display: flex;
     flex-direction: column;
     gap: 2.5rem;
@@ -44,8 +45,10 @@
     border: 1px solid #888;
     width: 32rem;
     height: 45rem;
+    max-height: 45rem;
     max-height: 90%;
     margin: 0;
+    gap: 40px;
 }
 
 .cart-header{
@@ -67,16 +70,16 @@
     flex-direction: column;
     font-size: 1.5rem;
     font-weight: 500;
-    max-height: 70%;
+    max-height: 30%;
     overflow: scroll;
     overflow-x: hidden;
-    margin-top: 40px;
 }
 
 .card-item{
     display: flex;
     gap: 1.5rem;
     margin-top: 40px;
+    overflow:visible
 }
 
 .item-info{
@@ -166,6 +169,7 @@
 
 .continueShopping{
     width: 100%;
+    height: fit-content;
     display: flex;
     font-size: 24px;
     font-weight: 500;

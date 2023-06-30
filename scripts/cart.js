@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function(){
   
   closeBtn.addEventListener("click", function() {
     cartModal.style.display = "none";
-    window.location.href = window.location.href
+    window.location.href = window.location.href;
   });
 
   // cartModal.addEventListener("click", function(event) {
@@ -31,8 +31,11 @@ function persistentCart(){
     containerElement.removeChild(containerElement.firstChild);
   }
 
-  if (sessionStorage.getItem('cart') == null){
+  if (sessionStorage.getItem('cart') === "{}" || sessionStorage.getItem('cart') === null){
     console.log("O carrinho está vazio");
+    let carth1 = document.getElementById('cart-h1');
+    carth1.textContent = "O carrinho está vazio"
+    carth1.style.margin = "auto";
     return;
   }
 

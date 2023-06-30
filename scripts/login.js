@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function(){
     function login (event){
         event.preventDefault();
         sessionStorage.setItem('token', true);
-        window.history.back();
+        location.reload();
     }
-
 });
