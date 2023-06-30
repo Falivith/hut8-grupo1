@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', function(){
     function login (event){
         event.preventDefault();
         sessionStorage.setItem('token', true);
-        location.reload();
+        window.location.href = "../index.html";
     }
 });
